@@ -1,0 +1,29 @@
+var _user$project$DesiredRoute$init = {
+	ctor: '_Tuple2',
+	_0: {lv: 0},
+	_1: _elm_lang$core$Platform_Cmd$none
+};
+var _user$project$DesiredRoute$subscriptions = function (model) {
+	return _elm_lang$core$Platform_Sub$none;
+};
+var _user$project$DesiredRoute$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text('DESIRED Route'),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$DesiredRoute$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+	});
+var _user$project$DesiredRoute$main = _elm_lang$html$Html$program(
+	{init: _user$project$DesiredRoute$init, view: _user$project$DesiredRoute$view, update: _user$project$DesiredRoute$update, subscriptions: _user$project$DesiredRoute$subscriptions})();
+var _user$project$DesiredRoute$Model = function (a) {
+	return {lv: a};
+};
+var _user$project$DesiredRoute$NoOp = {ctor: 'NoOp'};
