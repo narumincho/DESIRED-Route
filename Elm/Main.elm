@@ -1,7 +1,9 @@
-module DesiredRoute exposing (Model, Msg, main)
+port module DesiredRoute exposing (Model, Msg, main)
 
 import Html exposing (..)
+import Html.Attributes exposing (id,class,src,href,alt)
 
+port elmLoaded : String -> Cmd msg
 
 main : Program Never Model Msg
 main =
@@ -30,8 +32,11 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ text "DESIRED Route" ]
+    div [id "elm-root"]
+        [ Html.img [class "dr-img", src "image/title_logo.jpg"] []
+        , div [class "window"] [text "せりふ"]
+        , Html.nav [class "menu"] [text "メニュー"]
+        ]
 
 
 subscriptions : Model -> Sub Msg
@@ -41,4 +46,4 @@ subscriptions model =
 
 init : (Model, Cmd Msg)
 init = 
-    ({lv = 0}, Cmd.none)
+    ({lv = 0}, elmLoaded "loaded")

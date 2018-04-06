@@ -1,19 +1,59 @@
-var _user$project$DesiredRoute$init = {
-	ctor: '_Tuple2',
-	_0: {lv: 0},
-	_1: _elm_lang$core$Platform_Cmd$none
-};
 var _user$project$DesiredRoute$subscriptions = function (model) {
 	return _elm_lang$core$Platform_Sub$none;
 };
 var _user$project$DesiredRoute$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('DESIRED Route'),
+			_0: _elm_lang$html$Html_Attributes$id('elm-root'),
 			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$img,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('dr-img'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$src('image/title_logo.jpg'),
+						_1: {ctor: '[]'}
+					}
+				},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('window'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('せりふ'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$nav,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('menu'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('メニュー'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
 		});
 };
 var _user$project$DesiredRoute$update = F2(
@@ -21,6 +61,16 @@ var _user$project$DesiredRoute$update = F2(
 		var _p0 = msg;
 		return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 	});
+var _user$project$DesiredRoute$elmLoaded = _elm_lang$core$Native_Platform.outgoingPort(
+	'elmLoaded',
+	function (v) {
+		return v;
+	});
+var _user$project$DesiredRoute$init = {
+	ctor: '_Tuple2',
+	_0: {lv: 0},
+	_1: _user$project$DesiredRoute$elmLoaded('loaded')
+};
 var _user$project$DesiredRoute$main = _elm_lang$html$Html$program(
 	{init: _user$project$DesiredRoute$init, view: _user$project$DesiredRoute$view, update: _user$project$DesiredRoute$update, subscriptions: _user$project$DesiredRoute$subscriptions})();
 var _user$project$DesiredRoute$Model = function (a) {
