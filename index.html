@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>DESIRED Route</title>
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             box-sizing: border-box;
         }
+
         #elm-root {
             width: 100%;
             height: 100%;
@@ -20,6 +22,7 @@
             grid-template-columns: 1fr max-content max-content;
             grid-template-rows: 1fr;
         }
+
         .dr-img {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
@@ -28,6 +31,7 @@
             height: 100%;
             user-select: none;
         }
+
         .window {
             grid-column: 1 / 2;
             grid-row: 2 / 3;
@@ -37,6 +41,7 @@
             pointer-events: none;
             user-select: none;
         }
+
         .menu {
             grid-column: 1 / 2;
             grid-row: 3 / 4;
@@ -57,8 +62,26 @@
 
         app.ports.elmLoaded.subscribe((text) => {
             console.log("Elm 読み込み完了");
-            document.body.addEventListener("touchmove", ()=>{}, { passive: false });
+            document.body.addEventListener("touchmove", (event) => {
+                event.preventDefault();
+            }, { passive: false });
         });
+        let gamepad;
+        window.addEventListener("gamepadconnected", function (e) {
+            var gp = navigator.getGamepads()[e.gamepad.index];
+            console.log("Gamepad connected at index %d: %s. %d buttons, %d axes.",
+                gp.index, gp.id,
+                gp.buttons.length, gp.axes.length);
+            if (4 < gp.buttons.length) {
+                gamepad = gp;
+                frameFn();
+            }
+        });
+        const frameFn = () => {
+            console.log(gamepad.buttons[0]);
+            requestAnimationFrame(frameFn);
+        };
+        app.ports.abxyPressed.send(1);
     </script>
 </body>
 

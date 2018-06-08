@@ -8145,85 +8145,159 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
 
-var _user$project$DesiredRoute$subscriptions = function (model) {
-	return _elm_lang$core$Platform_Sub$none;
-};
 var _user$project$DesiredRoute$view = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$id('elm-root'),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$img,
+	var _p0 = model;
+	switch (_p0.ctor) {
+		case 'TitleMode':
+			var buttonText = function () {
+				var _p1 = _p0._0;
+				if (_p1.ctor === 'Just') {
+					switch (_p1._0.ctor) {
+						case 'ButtonA':
+							return 'Aボタン';
+						case 'ButtonB':
+							return 'Bボタン';
+						case 'ButtonX':
+							return 'Xボタン';
+						default:
+							return 'Yボタン';
+					}
+				} else {
+					return '';
+				}
+			}();
+			return A2(
+				_elm_lang$html$Html$div,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('dr-img'),
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$src('image/title_logo.jpg'),
-						_1: {ctor: '[]'}
-					}
+					_0: _elm_lang$html$Html_Attributes$id('elm-root'),
+					_1: {ctor: '[]'}
 				},
-				{ctor: '[]'}),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('window'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('せりふ'),
-						_1: {ctor: '[]'}
-					}),
-				_1: {
+				{
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$nav,
+						_elm_lang$html$Html$img,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('menu'),
-							_1: {ctor: '[]'}
+							_0: _elm_lang$html$Html_Attributes$class('dr-img'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$src('image/title_logo.jpg'),
+								_1: {ctor: '[]'}
+							}
 						},
-						{
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('window'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('せりふ'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('メニュー'),
+							_0: A2(
+								_elm_lang$html$Html$nav,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('menu'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(
+										A2(_elm_lang$core$Basics_ops['++'], 'メニュー', buttonText)),
+									_1: {ctor: '[]'}
+								}),
 							_1: {ctor: '[]'}
-						}),
+						}
+					}
+				});
+		case 'SearchMode':
+			return A2(
+				_elm_lang$html$Html$div,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Search Mode'),
 					_1: {ctor: '[]'}
-				}
-			}
-		});
+				});
+		default:
+			return A2(
+				_elm_lang$html$Html$div,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Battle Mode'),
+					_1: {ctor: '[]'}
+				});
+	}
 };
-var _user$project$DesiredRoute$update = F2(
-	function (msg, model) {
-		var _p0 = msg;
-		return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
-	});
 var _user$project$DesiredRoute$elmLoaded = _elm_lang$core$Native_Platform.outgoingPort(
 	'elmLoaded',
 	function (v) {
 		return v;
 	});
-var _user$project$DesiredRoute$init = {
-	ctor: '_Tuple2',
-	_0: {lv: 0},
-	_1: _user$project$DesiredRoute$elmLoaded('loaded')
+var _user$project$DesiredRoute$abxyPressed = _elm_lang$core$Native_Platform.incomingPort('abxyPressed', _elm_lang$core$Json_Decode$int);
+var _user$project$DesiredRoute$BattleMode = {ctor: 'BattleMode'};
+var _user$project$DesiredRoute$SearchMode = {ctor: 'SearchMode'};
+var _user$project$DesiredRoute$TitleMode = function (a) {
+	return {ctor: 'TitleMode', _0: a};
+};
+var _user$project$DesiredRoute$init = A2(
+	_elm_lang$core$Platform_Cmd_ops['!'],
+	_user$project$DesiredRoute$TitleMode(_elm_lang$core$Maybe$Nothing),
+	{
+		ctor: '::',
+		_0: _user$project$DesiredRoute$elmLoaded('loaded'),
+		_1: {ctor: '[]'}
+	});
+var _user$project$DesiredRoute$ButtonY = {ctor: 'ButtonY'};
+var _user$project$DesiredRoute$ButtonX = {ctor: 'ButtonX'};
+var _user$project$DesiredRoute$ButtonB = {ctor: 'ButtonB'};
+var _user$project$DesiredRoute$ButtonA = {ctor: 'ButtonA'};
+var _user$project$DesiredRoute$update = F2(
+	function (_p2, model) {
+		var _p3 = _p2;
+		return A2(
+			_elm_lang$core$Platform_Cmd_ops['!'],
+			_user$project$DesiredRoute$TitleMode(
+				function () {
+					var _p4 = _p3._0;
+					switch (_p4) {
+						case 0:
+							return _elm_lang$core$Maybe$Just(_user$project$DesiredRoute$ButtonA);
+						case 1:
+							return _elm_lang$core$Maybe$Just(_user$project$DesiredRoute$ButtonB);
+						case 2:
+							return _elm_lang$core$Maybe$Just(_user$project$DesiredRoute$ButtonX);
+						case 3:
+							return _elm_lang$core$Maybe$Just(_user$project$DesiredRoute$ButtonY);
+						default:
+							return _elm_lang$core$Maybe$Nothing;
+					}
+				}()),
+			{
+				ctor: '::',
+				_0: _elm_lang$core$Platform_Cmd$none,
+				_1: {ctor: '[]'}
+			});
+	});
+var _user$project$DesiredRoute$ChangeButton = function (a) {
+	return {ctor: 'ChangeButton', _0: a};
+};
+var _user$project$DesiredRoute$subscriptions = function (_p5) {
+	return _user$project$DesiredRoute$abxyPressed(_user$project$DesiredRoute$ChangeButton);
 };
 var _user$project$DesiredRoute$main = _elm_lang$html$Html$program(
 	{init: _user$project$DesiredRoute$init, view: _user$project$DesiredRoute$view, update: _user$project$DesiredRoute$update, subscriptions: _user$project$DesiredRoute$subscriptions})();
-var _user$project$DesiredRoute$Model = function (a) {
-	return {lv: a};
-};
-var _user$project$DesiredRoute$NoOp = {ctor: 'NoOp'};
 
 var Elm = {};
 Elm['DesiredRoute'] = Elm['DesiredRoute'] || {};
