@@ -2,6 +2,8 @@ port module DesiredRoute exposing (Model, Msg, main)
 
 import Html exposing (..)
 import Html.Attributes exposing (id, class, src, href, alt)
+import Svg
+import Svg.Attributes as Svga
 
 
 port elmLoaded : String -> Cmd msg
@@ -21,7 +23,7 @@ main =
 
 
 type Model
-    = TitleMode (Maybe Button)
+    = TitleMode
     | SearchMode
     | BattleMode
 
@@ -38,62 +40,48 @@ type Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
-update (ChangeButton x) model =
-    (TitleMode
-        (case x of
-            0 ->
-                Just ButtonA
-
-            1 ->
-                Just ButtonB
-
-            2 ->
-                Just ButtonX
-
-            3 ->
-                Just ButtonY
-
-            _ ->
-                Nothing
-        )
-    )
-        ! [ Cmd.none ]
+update _ model =
+    model ! [ Cmd.none ]
 
 
 view : Model -> Html Msg
 view model =
     case model of
-        TitleMode button->
-            let
-                buttonText : String
-                buttonText =
-                    case button of
-                        Just ButtonA ->
-                            "Aボタン"
-
-                        Just ButtonB ->
-                            "Bボタン"
-
-                        Just ButtonX ->
-                            "Xボタン"
-
-                        Just ButtonY ->
-                            "Yボタン"
-
-                        Nothing ->
-                            ""
-            in
-                div [ id "elm-root" ]
-                    [ Html.img [ class "dr-img", src "image/title_logo.jpg" ] []
-                    , div [ class "window" ] [ text "せりふ" ]
-                    , Html.nav [ class "menu" ] [ text ("メニュー" ++ buttonText) ]
-                    ]
+        TitleMode ->
+            div [ id "elm-root" ]
+                [ text "Title Mode"
+                ]
 
         SearchMode ->
-            div [] [ text "Search Mode" ]
+            div [ id "elm-root" ]
+                [ Svg.svg
+                    [ Svga.viewBox "0 0 16 9" ]
+                    bg
+                ]
 
         BattleMode ->
             div [] [ text "Battle Mode" ]
+
+
+bg : List (Svg.Svg msg)
+bg =
+    List.range 0 15
+        |> List.concatMap
+            (\x ->
+                List.range 0 8
+                    |> List.map (\y -> ( x, y ))
+            )
+        |> List.map
+            (\( x, y ) ->
+                Svg.image
+                    [ Svga.xlinkHref "image/bg.png"
+                    , Svga.height "1"
+                    , Svga.width "1"
+                    , Svga.x (toString x)
+                    , Svga.y (toString y)
+                    ]
+                    []
+            )
 
 
 subscriptions : Model -> Sub Msg
@@ -103,4 +91,4 @@ subscriptions _ =
 
 init : ( Model, Cmd Msg )
 init =
-    TitleMode Nothing ! [ elmLoaded "loaded" ]
+    SearchMode ! [ elmLoaded "loaded" ]
