@@ -8145,6 +8145,10 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
 
+var _elm_lang$html$Html_Lazy$lazy3 = _elm_lang$virtual_dom$VirtualDom$lazy3;
+var _elm_lang$html$Html_Lazy$lazy2 = _elm_lang$virtual_dom$VirtualDom$lazy2;
+var _elm_lang$html$Html_Lazy$lazy = _elm_lang$virtual_dom$VirtualDom$lazy;
+
 var _elm_lang$svg$Svg$map = _elm_lang$virtual_dom$VirtualDom$map;
 var _elm_lang$svg$Svg$text = _elm_lang$virtual_dom$VirtualDom$text;
 var _elm_lang$svg$Svg$svgNamespace = A2(
@@ -8486,123 +8490,238 @@ var _elm_lang$svg$Svg_Attributes$accumulate = _elm_lang$virtual_dom$VirtualDom$a
 var _elm_lang$svg$Svg_Attributes$accelerate = _elm_lang$virtual_dom$VirtualDom$attribute('accelerate');
 var _elm_lang$svg$Svg_Attributes$accentHeight = _elm_lang$virtual_dom$VirtualDom$attribute('accent-height');
 
-var _user$project$DesiredRoute$bg = A2(
-	_elm_lang$core$List$map,
-	function (_p0) {
-		var _p1 = _p0;
-		return A2(
-			_elm_lang$svg$Svg$image,
-			{
+var _user$project$DesiredRoute$mapString = {
+	ctor: '::',
+	_0: '                111111 1 ',
+	_1: {
+		ctor: '::',
+		_0: '   1111111111111        11',
+		_1: {
+			ctor: '::',
+			_0: '   1111111111111    ttttt',
+			_1: {
 				ctor: '::',
-				_0: _elm_lang$svg$Svg_Attributes$xlinkHref('image/bg.png'),
+				_0: '   2011111111103    ttttt',
 				_1: {
 					ctor: '::',
-					_0: _elm_lang$svg$Svg_Attributes$height('1'),
+					_0: '     201111103     tttttt',
 					_1: {
 						ctor: '::',
-						_0: _elm_lang$svg$Svg_Attributes$width('1'),
+						_0: '       20003      ttttttt',
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$svg$Svg_Attributes$x(
-								_elm_lang$core$Basics$toString(_p1._0)),
+							_0: '                ttttttttt',
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$svg$Svg_Attributes$y(
-									_elm_lang$core$Basics$toString(_p1._1)),
-								_1: {ctor: '[]'}
+								_0: '   2011111111103    ttttt',
+								_1: {
+									ctor: '::',
+									_0: '     201111103     tttttt',
+									_1: {
+										ctor: '::',
+										_0: '       20003      ttttttt',
+										_1: {
+											ctor: '::',
+											_0: '                ttttttttt',
+											_1: {
+												ctor: '::',
+												_0: '                ttttttttt',
+												_1: {
+													ctor: '::',
+													_0: '   111111111    ttttttttt',
+													_1: {
+														ctor: '::',
+														_0: '    1111111     ttttttttt',
+														_1: {
+															ctor: '::',
+															_0: '     11111      ttttttttt',
+															_1: {
+																ctor: '::',
+																_0: '   111111111    ttttttttt',
+																_1: {
+																	ctor: '::',
+																	_0: '    1111111     ttttttttt',
+																	_1: {
+																		ctor: '::',
+																		_0: '     11111      ttttttttt',
+																		_1: {
+																			ctor: '::',
+																			_0: '   111111111    ttttttttt',
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
 				}
-			},
-			{ctor: '[]'});
-	},
-	A2(
-		_elm_lang$core$List$concatMap,
-		function (x) {
-			return A2(
-				_elm_lang$core$List$map,
-				function (y) {
-					return {ctor: '_Tuple2', _0: x, _1: y};
-				},
-				A2(_elm_lang$core$List$range, 0, 8));
-		},
-		A2(_elm_lang$core$List$range, 0, 15)));
-var _user$project$DesiredRoute$view = function (model) {
-	var _p2 = model;
-	switch (_p2.ctor) {
-		case 'TitleMode':
-			return A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$id('elm-root'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('Title Mode'),
-					_1: {ctor: '[]'}
-				});
-		case 'SearchMode':
-			return A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$id('elm-root'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$svg$Svg$svg,
-						{
-							ctor: '::',
-							_0: _elm_lang$svg$Svg_Attributes$viewBox('0 0 16 9'),
-							_1: {ctor: '[]'}
-						},
-						_user$project$DesiredRoute$bg),
-					_1: {ctor: '[]'}
-				});
-		default:
-			return A2(
-				_elm_lang$html$Html$div,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('Battle Mode'),
-					_1: {ctor: '[]'}
-				});
+			}
+		}
 	}
 };
+var _user$project$DesiredRoute$bgToUrl = function (x) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		'image/',
+		function () {
+			var _p0 = x;
+			switch (_p0.ctor) {
+				case 'Stone':
+					return 'bg_stone.png';
+				case 'Wood':
+					return 'bg_wood.png';
+				case 'WoodBottom':
+					return 'bg_wood_bottom.png';
+				case 'WoodCorner':
+					return 'bg_wood_corner.png';
+				case 'WoodCornerInv':
+					return 'bg_wood_corner_inv.png';
+				default:
+					return 'bg_temp.png';
+			}
+		}());
+};
+var _user$project$DesiredRoute$elmLoaded = _elm_lang$core$Native_Platform.outgoingPort(
+	'elmLoaded',
+	function (v) {
+		return v;
+	});
+var _user$project$DesiredRoute$receive = _elm_lang$core$Native_Platform.incomingPort(
+	'receive',
+	_elm_lang$core$Json_Decode$oneOf(
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Json_Decode$null(_elm_lang$core$Maybe$Nothing),
+			_1: {
+				ctor: '::',
+				_0: A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _elm_lang$core$Json_Decode$int),
+				_1: {ctor: '[]'}
+			}
+		}));
+var _user$project$DesiredRoute$Model = F3(
+	function (a, b, c) {
+		return {x: a, y: b, walkState: c};
+	});
+var _user$project$DesiredRoute$Walking = F2(
+	function (a, b) {
+		return {ctor: 'Walking', _0: a, _1: b};
+	});
+var _user$project$DesiredRoute$Stop = {ctor: 'Stop'};
+var _user$project$DesiredRoute$init = A2(
+	_elm_lang$core$Platform_Cmd_ops['!'],
+	{x: 0, y: 0, walkState: _user$project$DesiredRoute$Stop},
+	{
+		ctor: '::',
+		_0: _user$project$DesiredRoute$elmLoaded('loaded'),
+		_1: {ctor: '[]'}
+	});
+var _user$project$DesiredRoute$Down = {ctor: 'Down'};
+var _user$project$DesiredRoute$Right = {ctor: 'Right'};
+var _user$project$DesiredRoute$Left = {ctor: 'Left'};
+var _user$project$DesiredRoute$Up = {ctor: 'Up'};
 var _user$project$DesiredRoute$update = F2(
-	function (_p3, model) {
+	function (msg, model) {
+		var move = F2(
+			function (dir, rec) {
+				var _p1 = dir;
+				switch (_p1.ctor) {
+					case 'Right':
+						return _elm_lang$core$Native_Utils.update(
+							rec,
+							{x: rec.x + 1});
+					case 'Down':
+						return _elm_lang$core$Native_Utils.update(
+							rec,
+							{y: rec.y + 1});
+					case 'Left':
+						return _elm_lang$core$Native_Utils.update(
+							rec,
+							{x: rec.x - 1});
+					default:
+						return _elm_lang$core$Native_Utils.update(
+							rec,
+							{y: rec.y - 1});
+				}
+			});
+		var dMsg = function () {
+			var _p2 = msg;
+			_v2_4:
+			do {
+				if (_p2._0.ctor === 'Just') {
+					switch (_p2._0._0) {
+						case 0:
+							return _elm_lang$core$Maybe$Just(_user$project$DesiredRoute$Right);
+						case 2:
+							return _elm_lang$core$Maybe$Just(_user$project$DesiredRoute$Down);
+						case 4:
+							return _elm_lang$core$Maybe$Just(_user$project$DesiredRoute$Left);
+						case 6:
+							return _elm_lang$core$Maybe$Just(_user$project$DesiredRoute$Up);
+						default:
+							break _v2_4;
+					}
+				} else {
+					break _v2_4;
+				}
+			} while(false);
+			return _elm_lang$core$Maybe$Nothing;
+		}();
 		return A2(
 			_elm_lang$core$Platform_Cmd_ops['!'],
-			model,
+			function () {
+				var _p3 = model;
+				var _p4 = _p3.walkState;
+				if (_p4.ctor === 'Stop') {
+					var _p5 = dMsg;
+					if (_p5.ctor === 'Just') {
+						return _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								walkState: A2(_user$project$DesiredRoute$Walking, _p5._0, 0)
+							});
+					} else {
+						return model;
+					}
+				} else {
+					var _p8 = _p4._1;
+					var _p7 = _p4._0;
+					if (_elm_lang$core$Native_Utils.cmp(32, _p8) < 1) {
+						var moved = A2(move, _p7, model);
+						var _p6 = dMsg;
+						if (_p6.ctor === 'Just') {
+							return _elm_lang$core$Native_Utils.update(
+								moved,
+								{
+									walkState: A2(_user$project$DesiredRoute$Walking, _p6._0, 0)
+								});
+						} else {
+							return _elm_lang$core$Native_Utils.update(
+								moved,
+								{walkState: _user$project$DesiredRoute$Stop});
+						}
+					} else {
+						return _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								walkState: A2(_user$project$DesiredRoute$Walking, _p7, _p8 + 2)
+							});
+					}
+				}
+			}(),
 			{
 				ctor: '::',
 				_0: _elm_lang$core$Platform_Cmd$none,
 				_1: {ctor: '[]'}
 			});
 	});
-var _user$project$DesiredRoute$elmLoaded = _elm_lang$core$Native_Platform.outgoingPort(
-	'elmLoaded',
-	function (v) {
-		return v;
-	});
-var _user$project$DesiredRoute$abxyPressed = _elm_lang$core$Native_Platform.incomingPort('abxyPressed', _elm_lang$core$Json_Decode$int);
-var _user$project$DesiredRoute$BattleMode = {ctor: 'BattleMode'};
-var _user$project$DesiredRoute$SearchMode = {ctor: 'SearchMode'};
-var _user$project$DesiredRoute$init = A2(
-	_elm_lang$core$Platform_Cmd_ops['!'],
-	_user$project$DesiredRoute$SearchMode,
-	{
-		ctor: '::',
-		_0: _user$project$DesiredRoute$elmLoaded('loaded'),
-		_1: {ctor: '[]'}
-	});
-var _user$project$DesiredRoute$TitleMode = {ctor: 'TitleMode'};
 var _user$project$DesiredRoute$ButtonY = {ctor: 'ButtonY'};
 var _user$project$DesiredRoute$ButtonX = {ctor: 'ButtonX'};
 var _user$project$DesiredRoute$ButtonB = {ctor: 'ButtonB'};
@@ -8610,8 +8729,209 @@ var _user$project$DesiredRoute$ButtonA = {ctor: 'ButtonA'};
 var _user$project$DesiredRoute$ChangeButton = function (a) {
 	return {ctor: 'ChangeButton', _0: a};
 };
-var _user$project$DesiredRoute$subscriptions = function (_p4) {
-	return _user$project$DesiredRoute$abxyPressed(_user$project$DesiredRoute$ChangeButton);
+var _user$project$DesiredRoute$subscriptions = function (_p9) {
+	return _user$project$DesiredRoute$receive(_user$project$DesiredRoute$ChangeButton);
+};
+var _user$project$DesiredRoute$Temp = {ctor: 'Temp'};
+var _user$project$DesiredRoute$WoodCornerInv = {ctor: 'WoodCornerInv'};
+var _user$project$DesiredRoute$WoodCorner = {ctor: 'WoodCorner'};
+var _user$project$DesiredRoute$WoodBottom = {ctor: 'WoodBottom'};
+var _user$project$DesiredRoute$Wood = {ctor: 'Wood'};
+var _user$project$DesiredRoute$Stone = {ctor: 'Stone'};
+var _user$project$DesiredRoute$charToBg = function (c) {
+	var _p10 = c;
+	switch (_p10.valueOf()) {
+		case ' ':
+			return _user$project$DesiredRoute$Stone;
+		case '1':
+			return _user$project$DesiredRoute$Wood;
+		case '0':
+			return _user$project$DesiredRoute$WoodBottom;
+		case '2':
+			return _user$project$DesiredRoute$WoodCorner;
+		case '3':
+			return _user$project$DesiredRoute$WoodCornerInv;
+		default:
+			return _user$project$DesiredRoute$Temp;
+	}
+};
+var _user$project$DesiredRoute$stringToBgList = function (_p11) {
+	return A2(
+		_elm_lang$core$List$map,
+		_user$project$DesiredRoute$charToBg,
+		_elm_lang$core$String$toList(_p11));
+};
+var _user$project$DesiredRoute$map = A2(_elm_lang$core$List$map, _user$project$DesiredRoute$stringToBgList, _user$project$DesiredRoute$mapString);
+var _user$project$DesiredRoute$bg = F2(
+	function (cx, cy) {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$List$concat(
+				A2(
+					_elm_lang$core$List$indexedMap,
+					F2(
+						function (y, mapList) {
+							return A2(
+								_elm_lang$core$List$indexedMap,
+								F2(
+									function (x, chip) {
+										return A2(
+											_elm_lang$svg$Svg$image,
+											{
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$xlinkHref(
+													_user$project$DesiredRoute$bgToUrl(chip)),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$height('33'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$width('33'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$x(
+																_elm_lang$core$Basics$toString(x * 32)),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$y(
+																	_elm_lang$core$Basics$toString(y * 32)),
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											},
+											{ctor: '[]'});
+									}),
+								mapList);
+						}),
+					_user$project$DesiredRoute$map)),
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$svg$Svg$image,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$x(
+							_elm_lang$core$Basics$toString(cx)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$y(
+								_elm_lang$core$Basics$toString(cy - 16)),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$width('32'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$height('48'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$xlinkHref('image/rafya.png'),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {ctor: '[]'}
+			});
+	});
+var _user$project$DesiredRoute$lazyedView = F3(
+	function (x, y, walkState) {
+		var stepY = function () {
+			var _p12 = walkState;
+			_v8_2:
+			do {
+				if (_p12.ctor === 'Walking') {
+					switch (_p12._0.ctor) {
+						case 'Up':
+							return 0 - _p12._1;
+						case 'Down':
+							return _p12._1;
+						default:
+							break _v8_2;
+					}
+				} else {
+					break _v8_2;
+				}
+			} while(false);
+			return 0;
+		}();
+		var stepX = function () {
+			var _p13 = walkState;
+			_v9_2:
+			do {
+				if (_p13.ctor === 'Walking') {
+					switch (_p13._0.ctor) {
+						case 'Left':
+							return 0 - _p13._1;
+						case 'Right':
+							return _p13._1;
+						default:
+							break _v9_2;
+					}
+				} else {
+					break _v9_2;
+				}
+			} while(false);
+			return 0;
+		}();
+		var baseY = y * 32;
+		var baseX = x * 32;
+		var viewBox = _elm_lang$core$String$concat(
+			{
+				ctor: '::',
+				_0: _elm_lang$core$Basics$toString(((baseX + stepX) - 400) + 16),
+				_1: {
+					ctor: '::',
+					_0: ' ',
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Basics$toString(((baseY + stepY) - 256) + 48),
+						_1: {
+							ctor: '::',
+							_0: ' ',
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$core$Basics$toString(32 * 25),
+								_1: {
+									ctor: '::',
+									_0: ' ',
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$core$Basics$toString(32 * 16),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			});
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$id('elm-root'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$svg$Svg$svg,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$viewBox(viewBox),
+						_1: {ctor: '[]'}
+					},
+					A2(_user$project$DesiredRoute$bg, baseX + stepX, baseY + stepY)),
+				_1: {ctor: '[]'}
+			});
+	});
+var _user$project$DesiredRoute$view = function (_p14) {
+	var _p15 = _p14;
+	return A4(_elm_lang$html$Html_Lazy$lazy3, _user$project$DesiredRoute$lazyedView, _p15.x, _p15.y, _p15.walkState);
 };
 var _user$project$DesiredRoute$main = _elm_lang$html$Html$program(
 	{init: _user$project$DesiredRoute$init, view: _user$project$DesiredRoute$view, update: _user$project$DesiredRoute$update, subscriptions: _user$project$DesiredRoute$subscriptions})();
