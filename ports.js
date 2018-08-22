@@ -1,5 +1,7 @@
-/*global Elm*/
-const app = Elm.DesiredRoute.fullscreen();
+const app = Elm.Main.init({
+    node: document.body,
+    flags: 0
+  });
 app.ports.elmLoaded.subscribe((text) => {
     "use strict";
     console.log("Elm 読み込み完了");
